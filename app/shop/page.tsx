@@ -29,7 +29,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
             المتجر
           </p>
           <h1 className="text-4xl font-bold">اختر روتينك المثالي</h1>
-          <p className="text-sm text-white/70">
+          <p className="text-base text-white/90">
             استخدم البحث والفلاتر لاختيار ما يناسب هدفك اليومي، ثم أنهِ الطلب
             مباشرة عبر السلة أو واتساب.
           </p>

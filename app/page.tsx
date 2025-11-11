@@ -60,14 +60,22 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="space-y-6" aria-labelledby="categories">
+      <GlassCard
+        as="section"
+        className="space-y-6 border-white/15 bg-white/10"
+        aria-labelledby="categories"
+      >
         <div className="flex flex-col gap-2">
           <p className="text-sm uppercase tracking-[0.4em] text-mint">
             الفئات
           </p>
-          <h2 id="categories" className="text-3xl font-bold">
+          <h2 id="categories" className="text-3xl font-bold text-white">
             اكتشف مجموعاتنا المختارة
           </h2>
+          <p className="text-sm text-white/80">
+            مصفوفة مختارة بعناية تجمع بين المكملات، الجمال، والعناية العشبية
+            داخل بطاقات زجاجية فاخرة.
+          </p>
         </div>
         <div className="grid gap-4 md:grid-cols-4">
           {categories.map((category) => (
@@ -78,7 +86,7 @@ export default function HomePage() {
             />
           ))}
         </div>
-      </section>
+      </GlassCard>
 
       <section className="space-y-6" aria-labelledby="best-sellers">
         <div className="flex flex-col gap-2">
@@ -135,7 +143,10 @@ export default function HomePage() {
         </GlassCard>
       </section>
 
-      <section className="rounded-[32px] border border-mint/30 bg-gradient-to-r from-green-1/40 to-green-2/40 p-8 text-white lg:flex lg:items-center lg:justify-between">
+      <GlassCard
+        as="section"
+        className="space-y-4 bg-gradient-to-r from-green-1/60 via-green-2/40 to-green-1/60 text-white lg:flex lg:items-center lg:justify-between lg:space-y-0"
+      >
         <div>
           <p className="text-sm uppercase tracking-[0.4em] text-mint">
             تذكير لطيف
@@ -143,15 +154,15 @@ export default function HomePage() {
           <h2 className="mt-2 text-3xl font-bold">
             حاب تطلب بسرعة؟ راسلنا على واتساب الآن
           </h2>
-          <p className="mt-2 text-sm text-white/80">
+          <p className="mt-2 text-base text-white/90">
             فريق الاستشارة متواجد يوميًا من الساعة 9 صباحًا حتى 11 ليلاً مع
-            إمكانية إرسال عرض الشحن مباشرة.
+            إمكانية إرسال عرض الشحن مباشرة وخيارات توصيل مرنة لكل الولايات.
           </p>
         </div>
         <div className="mt-6 lg:mt-0">
           <WhatsAppButton />
         </div>
-      </section>
+      </GlassCard>
 
       <section id="faq" className="space-y-6">
         <FAQ />

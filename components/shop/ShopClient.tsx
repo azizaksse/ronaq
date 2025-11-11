@@ -42,8 +42,8 @@ export const ShopClient = ({
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 text-white shadow-glass">
-        <div className="flex items-center gap-3 text-sm text-white/70">
+      <div className="rounded-[32px] border border-white/15 bg-white/10 p-6 text-white shadow-glass backdrop-blur-2xl">
+        <div className="flex items-center gap-3 text-sm text-white/85">
           <Filter className="h-4 w-4 text-mint" />
           صمّم اختيارك
         </div>
@@ -52,9 +52,10 @@ export const ShopClient = ({
             placeholder="ابحث باسم المنتج، الفائدة أو المكون"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
+            className="text-white placeholder:text-white/60"
           />
           <div className="flex flex-col gap-2 text-sm">
-            <label className="text-white/70">
+            <label className="text-white/80">
               الحد الأقصى للسعر: {maxPrice.toLocaleString("ar-DZ")} دج
             </label>
             <input
@@ -73,10 +74,10 @@ export const ShopClient = ({
             type="button"
             onClick={() => setCategory(null)}
             className={cn(
-              "rounded-full border px-4 py-2 text-sm transition",
+              "rounded-full border px-4 py-2 text-sm transition backdrop-blur",
               !category
                 ? "border-mint bg-mint/15 text-mint"
-                : "border-white/20 text-white/70 hover:text-white",
+                : "border-white/25 text-white/70 hover:text-white",
             )}
           >
             الكل
@@ -87,10 +88,10 @@ export const ShopClient = ({
               type="button"
               onClick={() => setCategory(option)}
               className={cn(
-                "rounded-full border px-4 py-2 text-sm transition",
+                "rounded-full border px-4 py-2 text-sm transition backdrop-blur",
                 category === option
                   ? "border-mint bg-mint/15 text-mint"
-                  : "border-white/20 text-white/70 hover:text-white",
+                  : "border-white/25 text-white/70 hover:text-white",
               )}
             >
               {option}
@@ -100,7 +101,7 @@ export const ShopClient = ({
             <button
               type="button"
               onClick={() => setCategory(null)}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs text-white/70"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-xs text-white/80 backdrop-blur"
             >
               <X className="h-3.5 w-3.5" />
               تصفية جديدة

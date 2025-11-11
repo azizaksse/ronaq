@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { GlassCard } from "@/components/GlassCard";
 import { CategoryCard } from "@/components/CategoryCard";
@@ -6,6 +8,7 @@ import { BundleCard } from "@/components/BundleCard";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { FAQ } from "@/components/FAQ";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Button } from "@/components/ui/button";
 import { bundles, categories, products } from "@/lib/products";
 
 const uspCards = [
@@ -37,6 +40,20 @@ const categoryIcons: Record<string, string> = {
   "عناية بالشعر": "💇‍♀️",
   "زيوت وأعشاب": "🌿",
 };
+
+const collomakImages = [
+  "/products/clomac-1.jpg",
+  "/products/clomac-2.jpg",
+  "/products/clomac-3.jpg",
+  "/products/clomac-4.jpg",
+];
+
+const collomakHighlights = [
+  "يعالج عين السمكة والتصلبات بسرعة فائقة.",
+  "يحتوي على حمض اللاكتيك لتقشير موضعي آمن.",
+  "بولي دوكانول يهدئ الألم فور التطبيق.",
+  "مثالي لمسامير القدم مع نتائج واضحة خلال أيام.",
+];
 
 export default function HomePage() {
   const bestSellers = products.slice(0, 8);
@@ -100,6 +117,64 @@ export default function HomePage() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {bestSellers.map((product) => (
             <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="collomak"
+        className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]"
+        aria-labelledby="collomak-heading"
+      >
+        <GlassCard className="space-y-4 border-white/15 bg-[#122017]/80 backdrop-blur-2xl">
+          <p className="text-sm uppercase tracking-[0.4em] text-mint">
+            جديد رونق الحياة
+          </p>
+          <h2 id="collomak-heading" className="text-3xl font-bold text-white">
+            Collomak لعلاج الثآليل فوراً
+          </h2>
+          <p className="text-sm text-white/85">
+            محلول كوللوماك يعالج عين السمكة، الثآليل، ومسامير القدم بسرعة بفضل حمض
+            اللاكتيك والمخدر الموضعي بولي دوكانول، ما يمنحك راحة فورية وثقة في
+            كل خطوة.
+          </p>
+          <ul className="space-y-2 text-sm text-white/80">
+            {collomakHighlights.map((point) => (
+              <li key={point} className="flex items-start gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-mint" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Button asChild className="gap-2">
+              <Link href="/shop?highlight=collomak">اكتشف Collomak الآن</Link>
+            </Button>
+            <WhatsAppButton label="استفسر واتساب" />
+          </div>
+          <div className="text-sm text-white/70">
+            خدمة التوصيل متوفرة لـ 58 ولاية 🛒🚚
+            <br />
+            هاتف الطلب السريع:{" "}
+            <a href="tel:00676610457" className="text-mint underline">
+              00676610457
+            </a>
+          </div>
+        </GlassCard>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {collomakImages.map((src) => (
+            <div
+              key={src}
+              className="overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-glass"
+            >
+              <Image
+                src={src}
+                alt="صور منتج Collomak"
+                width={460}
+                height={460}
+                className="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
           ))}
         </div>
       </section>

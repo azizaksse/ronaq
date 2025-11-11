@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag, MessageCircle } from "lucide-react";
@@ -16,13 +17,17 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
   const previewCart: CartItem = { ...product, quantity: 1 };
   const whatsappPreview = buildWhatsAppLink([previewCart]);
+  const productLink = `/shop?highlight=${product.slug}`;
 
   return (
     <motion.article
       whileHover={{ y: -8 }}
       className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-4 text-white shadow-glass backdrop-blur-xl"
     >
-      <div className="relative mb-4 overflow-hidden rounded-2xl bg-gradient-to-br from-green-1/40 to-green-2/20">
+      <Link
+        href={productLink}
+        className="relative mb-4 block overflow-hidden rounded-2xl bg-gradient-to-br from-green-1/40 to-green-2/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+      >
         <Image
           src={product.image}
           alt={product.nameAr}
@@ -33,12 +38,15 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <span className="absolute right-3 top-3 rounded-full border border-white/20 bg-[#0f1d16]/60 px-3 py-1 text-xs">
           {product.category}
         </span>
-      </div>
+      </Link>
       <div className="flex flex-1 flex-col gap-3">
-        <div>
-          <h3 className="text-lg font-semibold">{product.nameAr}</h3>
+        <Link
+          href={productLink}
+          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+        >
+          <h3 className="text-lg font-semibold text-white">{product.nameAr}</h3>
           <p className="text-sm text-white/70">{product.descAr}</p>
-        </div>
+        </Link>
         <div className="flex flex-wrap gap-2 text-[11px] text-mint">
           {product.highlights?.map((item) => (
             <span

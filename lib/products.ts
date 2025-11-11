@@ -106,6 +106,18 @@ export const products: Product[] = [
     highlights: ["شعر أقوى", "طعم طبيعي"],
     weightGrams: 160,
   },
+  {
+    id: "collomak",
+    nameAr: "Collomak لعلاج الثآليل فوراً",
+    slug: "collomak",
+    descAr:
+      "محلول موضعي يذيب التصلبات وعين السمكة بسرعة بفضل حمض اللاكتيك والمخدر الموضعي بولي دوكانول، ويخفف الألم فوراً.",
+    priceDzd: 6700,
+    category: "عناية بالبشرة",
+    image: "/products/clomac-1.jpg",
+    highlights: ["يزيل مسامير القدم", "يقلل الألم فوراً"],
+    weightGrams: 50,
+  },
 ];
 
 export type Bundle = {

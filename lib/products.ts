@@ -118,6 +118,23 @@ export const products: Product[] = [
     highlights: ["يزيل مسامير القدم", "يقلل الألم فوراً"],
     weightGrams: 50,
   },
+  {
+    id: "ginseng-power",
+    nameAr: "وداعاً للنحافة مع الجنسينج الأصلي",
+    slug: "ginseng-original",
+    descAr:
+      "الجنسينج المطوّر للتسمين وزيادة الوزن، يقوي المناعة ويمنح نشاطاً ذهنياً وطاقة متجددة.",
+    priceDzd: 7600,
+    category: "مكملات غذائية",
+    image: "/products/ginseng-1.jpg",
+    highlights: [
+      "يزيد الوزن من 8 إلى 12 كلغ",
+      "يحسّن التركيز والحفظ",
+      "مفيد لمرضى السكري والقلب",
+      "يفتح الشهية ويفيد الرياضيين",
+    ],
+    weightGrams: 300,
+  },
 ];
 
 export type Bundle = {
